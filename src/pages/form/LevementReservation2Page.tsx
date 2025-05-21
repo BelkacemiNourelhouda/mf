@@ -1,4 +1,4 @@
-import LeverReserve2Form from "@/components/LeverReserver2Form"
+import LeverReserve2Form from "@/components/Process1/Process1LeverReserve2"
 
 export default function LevementReservation2Page() {
     return (

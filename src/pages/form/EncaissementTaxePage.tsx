@@ -1,4 +1,4 @@
-import EncaissementTaxeForm from "@/components/EncaissementTaxeForm"
+import EncaissementTaxeForm from "@/components/Process1/Process1EncaissementTaxe"
 
 export default function EncaissementTaxePage() {
     return (

@@ -1,4 +1,4 @@
-import RefusEncaissementForm from "@/components/RefusEncaissementForm"
+import RefusEncaissementForm from "@/components/Process1/Process1RefusEncaissement"
 
 export default function RefusEncaissementPage() {
     return (

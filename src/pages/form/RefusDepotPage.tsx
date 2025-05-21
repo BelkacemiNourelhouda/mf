@@ -1,4 +1,4 @@
-import RefusDepotForm from "@/components/RefusDepotForm"
+import RefusDepotForm from "@/components/Process1/Process1RefusDepot"
 
 export default function RefusDepotPage() {
     return (

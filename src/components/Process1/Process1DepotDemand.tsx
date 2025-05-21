@@ -36,7 +36,7 @@ const conformitéTypes = [
   { label: 'Non Conforme', value: 'Non Conforme' },
 ]
 
-const depotFormSchema = z.object({
+const depotSchema = z.object({
   numeroDossier: z.string().min(1, 'Le numéro de dossier est requis'),
   acteType: z.string().min(1, 'Le type d’acte est requis'),
   nom: z.string().min(1, 'Le nom est requis'),
@@ -50,13 +50,13 @@ const depotFormSchema = z.object({
   conformitéType: z.string().min(1, 'Le type d’acte est requis'),
 })
 
-type DepotFormValues = z.infer<typeof depotFormSchema>
+type depotValues = z.infer<typeof depotSchema>
 
-export default function DepotDemandForm() {
+export default function Process1DepotDemand() {
   const navigate = useNavigate()
 
-  const form = useForm<DepotFormValues>({
-    resolver: zodResolver(depotFormSchema),
+  const form = useForm<depotValues>({
+    resolver: zodResolver(depotSchema),
     defaultValues: {
       numeroDossier: '',
       acteType: '',
@@ -69,7 +69,7 @@ export default function DepotDemandForm() {
     mode: 'onChange',
   })
 
-  function onSubmit(values: DepotFormValues) {
+  function onSubmit(values: depotValues) {
     console.log('🔄 Données soumises :', values)
     if (values.conformitéType === "Conforme") {
       navigate("/encaissement")

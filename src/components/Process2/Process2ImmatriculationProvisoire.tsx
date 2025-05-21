@@ -22,16 +22,16 @@ const schema = z.object({
     }),
 })
 
-type ImmatriculationFormData = z.infer<typeof schema>
+type ImmatriculationData = z.infer<typeof schema>
 
-export default function ImmatriculationProvisoireForm() {
+export default function Process2ImmatriculationProvisoire() {
   const navigate = useNavigate()
 
-  const form = useForm<ImmatriculationFormData>({
+  const form = useForm<ImmatriculationData>({
     resolver: zodResolver(schema),
   })
 
-  const onSubmit = (data: ImmatriculationFormData) => {
+  const onSubmit = (data: ImmatriculationData) => {
     const file = data.document[0]
     console.log("📎 Fichier sélectionné :", file)
     navigate("/preparationImmat")

@@ -1,4 +1,4 @@
-import PreparerImmatriculationForm from "@/components/process2/PréparerImmatriculationForm"
+import PreparerImmatriculationForm from "@/components/Process2/Process2PréparerImmatriculation"
 
 export default function PreparerImmatriculationPage() {
   return (

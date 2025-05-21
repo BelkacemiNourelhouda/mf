@@ -29,7 +29,7 @@ const schema = z.object({
       message: "Veuillez joindre l'acte définitif.",
     }),
   commentaire: z.string().optional(),
-  conformitéType: z.string().min(1, 'Le type d’acte est requis'),
+  possessionTypes: z.string().min(1, 'Le type d’acte est requis'),
 })
 
 const possessionTypes = [
@@ -40,7 +40,7 @@ const possessionTypes = [
 
 type FormData = z.infer<typeof schema>
 
-export default function PreparerImmatriculationForm() {
+export default function Process2PreparerImmatriculation() {
     const navigate = useNavigate()
   const form = useForm<FormData>({
     resolver: zodResolver(schema),

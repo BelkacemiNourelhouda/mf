@@ -36,11 +36,11 @@ const conformitéTypes = [
     { label: 'Non Conforme', value: 'Non Conforme' },
   ]
 
-type DemandeFormValues = z.infer<typeof demandeSchema>
+type DemandeValues = z.infer<typeof demandeSchema>
 
-export default function EnregistrementDemandeForm() {
+export default function Process2EnregistrementDemande() {
     const navigate = useNavigate()
-    const form = useForm<DemandeFormValues>({
+    const form = useForm<DemandeValues>({
     
     resolver: zodResolver(demandeSchema),
     defaultValues: {
@@ -50,7 +50,7 @@ export default function EnregistrementDemandeForm() {
     },
   })
 
-  const onSubmit = (values: DemandeFormValues) => {
+  const onSubmit = (values: DemandeValues) => {
     console.log("📩 Données enregistrées :", values)
     if (values.conformitéType === "Conforme") {
         navigate("/examinationFond")

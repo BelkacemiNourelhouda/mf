@@ -1,4 +1,4 @@
-import EnregistrementDemandeForm from "@/components/process2/EnregistrementDemandeForm"
+import EnregistrementDemandeForm from "@/components/Process2/Process2EnregistrementDemande"
 
 export default function EnregistrementDemandePage() {
   return (

@@ -31,11 +31,11 @@ const fondSchema = z.object({
   })
   
 
-type FondFormValues = z.infer<typeof fondSchema>
+type FondValues = z.infer<typeof fondSchema>
 
-export default function ExaminerFondForm() {
+export default function Process2ExaminerFond() {
   const navigate = useNavigate()
-  const form = useForm<FondFormValues>({
+  const form = useForm<FondValues>({
     resolver: zodResolver(fondSchema),
     defaultValues: {
       decisionFond: undefined,
@@ -45,7 +45,7 @@ export default function ExaminerFondForm() {
 
   const decision = form.watch("decisionFond")
 
-  const onSubmit = (data: FondFormValues) => {
+  const onSubmit = (data: FondValues) => {
     console.log("✅ Données : ", data)
     if (data.decisionFond === "conforme") {
       navigate("/immatriculationProv")

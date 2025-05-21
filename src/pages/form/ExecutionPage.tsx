@@ -1,4 +1,4 @@
-import ExecutionForm from "@/components/ExecutionForm"
+import ExecutionForm from "@/components/Process1/Process1Execution"
 
 export default function ExecutionPage() {
     return (

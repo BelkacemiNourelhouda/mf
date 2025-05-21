@@ -17,12 +17,14 @@ import { useNavigate } from "react-router-dom"
 const reserveFormeSchema = z.object({
   numeroDossier: z.string().min(1, "Numéro requis"),
   justificatif: z.string().min(5, "Justificatif requis"),
+  code: z.string().min(1, "Numéro requis"),
+  ccp: z.string().min(5, "Justificatif requis"),
   dateLevee: z.string().min(1, "Date requise"),
 })
 
 type ReserveFormeValues = z.infer<typeof reserveFormeSchema>
 
-export default function LeverReserveFormeForm() {
+export default function Process1LeverReserveForme2() {
     const navigate = useNavigate()
   const form = useForm<ReserveFormeValues>({
     resolver: zodResolver(reserveFormeSchema),
@@ -35,7 +37,7 @@ export default function LeverReserveFormeForm() {
 
   const onSubmit = (values: ReserveFormeValues) => {
     console.log("✅ Réserve levée :", values)
-    navigate("/")
+    navigate("/encaissement")
   }
 
   return (
@@ -84,6 +86,41 @@ export default function LeverReserveFormeForm() {
               <FormLabel>Date de levée</FormLabel>
               <FormControl>
                 <Input type="date" {...field} />
+              </FormControl>
+              <FormDescription>
+              
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <p>VOUS DEVEREZ PAYER 1000.00DA</p>
+
+        <FormField
+          control={form.control}
+          name="ccp"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>CCP</FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="1234-5678-9123-4567" />
+              </FormControl>
+              <FormDescription>
+              
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+<FormField
+          control={form.control}
+          name="code"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>CODE </FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="123" />
               </FormControl>
               <FormDescription>
               

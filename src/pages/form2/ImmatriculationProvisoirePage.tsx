@@ -1,4 +1,4 @@
-import ImmatriculationProvisoireForm from "@/components/process2/ImmatriculationProvisoireForm"
+import ImmatriculationProvisoireForm from "@/components/Process2/Process2ImmatriculationProvisoire"
 
 export default function ImmatriculationProvisoirePage() {
   return (

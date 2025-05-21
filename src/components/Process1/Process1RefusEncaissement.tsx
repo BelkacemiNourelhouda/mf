@@ -1,35 +1,32 @@
-import { z } from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { useNavigate } from "react-router-dom"
+import { z } from "zod"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
-    Select,
-    SelectTrigger,
-    SelectValue,
-    SelectContent,
-    SelectItem,
-  } from '@/components/ui/select'
-  import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-  } from '@/components/ui/form'
-  
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select'
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
 
-const encaissementSchema = z.object({
-  montant: z
-    .string()
-    .min(1, 'Le montant est requis')
-    .regex(/^[0-9]+(\.[0-9]{1,2})?$/, 'Montant invalide'),
-  reference: z.string().min(1, 'Référence obligatoire'),
-  nomCaissier: z.string().min(1, 'Nom du caissier requis'),
-  conformitéType: z.string().min(1, 'Conformité requise'),
+import { useNavigate } from "react-router-dom"
+
+const refusEncaissementSchema = z.object({
+  numeroDossier: z.string().min(1, "Numéro obligatoire"),
+  motif: z.string().min(5, "Motif trop court"),
+  dateRefus: z.string().min(1, "Date requise"),
+  conformitéType: z.string().min(1, 'Le type d’acte est requis'),
 })
 
 
@@ -38,45 +35,41 @@ const conformitéTypes = [
     { label: 'Non Conforme', value: 'Non Conforme' },
   ]
 
-type EncaissementValues = z.infer<typeof encaissementSchema>
 
-export default function EncaissementTaxeForm() {
+type RefusEncaissementValues = z.infer<typeof refusEncaissementSchema>
+
+export default function Process1RefusEncaissement() {
 const navigate = useNavigate()
-  const form = useForm<EncaissementValues>({
-    resolver: zodResolver(encaissementSchema),
+  const form = useForm<RefusEncaissementValues>({
+    resolver: zodResolver(refusEncaissementSchema),
     defaultValues: {
-      montant: '',
-      reference: '',
-      nomCaissier: '',
+      numeroDossier: "",
+      motif: "",
+      dateRefus: "",
     },
-    mode: 'onChange',
   })
 
-  const onSubmit = (values: EncaissementValues) => {
-    console.log('✅ Encaissement soumis :', values)
+  const onSubmit = (values: RefusEncaissementValues) => {
+    console.log("❌ Refus enregistré :", values)
     if (values.conformitéType === "Conforme") {
-      navigate("/execution")
-    } else {
-      navigate("/refusEncaissement")
-    }
- }
+        navigate("/levementReservation2")
+      } else {
+        navigate("/fin")
+      }
+  }
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6 max-w-xl p-6 bg-white rounded-lg shadow mx-auto"
-      >
-        <h2 className="text-xl font-bold mb-4">Encaissement de la taxe</h2>
-
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-xl p-6 bg-white shadow rounded mx-auto">
+      <h2 className="text-xl font-bold mb-4">Enregistrer le Refus du Depot</h2>
         <FormField
           control={form.control}
-          name="montant"
+          name="numeroDossier"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Montant</FormLabel>
+              <FormLabel>Numéro de dossier</FormLabel>
               <FormControl>
-                <Input placeholder="ex : 5000.00" {...field} />
+                <Input {...field} placeholder="2025-00123" />
               </FormControl>
               <FormDescription>
               
@@ -88,12 +81,12 @@ const navigate = useNavigate()
 
         <FormField
           control={form.control}
-          name="reference"
+          name="motif"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Référence</FormLabel>
+              <FormLabel>Motif du refus</FormLabel>
               <FormControl>
-                <Input placeholder="N° Bordereau ou Référence bancaire" {...field} />
+                <Input {...field} placeholder="Ex: Dossier incomplet" />
               </FormControl>
               <FormDescription>
               
@@ -105,12 +98,12 @@ const navigate = useNavigate()
 
         <FormField
           control={form.control}
-          name="nomCaissier"
+          name="dateRefus"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nom du caissier</FormLabel>
+              <FormLabel>Date du refus</FormLabel>
               <FormControl>
-                <Input placeholder="ex : Mme Aït Ali" {...field} />
+                <Input type="date" {...field} />
               </FormControl>
               <FormDescription>
               
@@ -149,8 +142,8 @@ const navigate = useNavigate()
           )}
         />
 
-        <Button type="submit" className="w-full h-12 text-base">
-          Valider l'encaissement
+        <Button type="submit" className="w-full">
+          Enregistrer le refus
         </Button>
       </form>
     </Form>

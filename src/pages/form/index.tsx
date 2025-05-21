@@ -1,4 +1,4 @@
-import DepotDemandForm from "@/components/DepotDemandForm"
+import DepotDemandForm from "@/components/Process1/Process1DepotDemand"
 import { Link } from "react-router-dom"
 
 export default function DepotDemandPage() {
