@@ -37,7 +37,7 @@ export default function Process3PublicationPR14() {
 
   function onSubmit(values: PublicationValues) {
     console.log('📢 PR14 publié :', values)
-    navigate('/emission-cc14')
+    navigate('/Processus3EmissionCC14')
   }
 
   return (

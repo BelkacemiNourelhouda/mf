@@ -41,7 +41,7 @@ export default function Process3EnregistrementDemande() {
 
   function onSubmit(values: EnregistrementValues) {
     console.log('📩 Enregistrement soumis :', values)
-    navigate('/verification-forme') // étape suivante
+    navigate('/Processus3VerificationForme') // étape suivante
   }
 
   return (

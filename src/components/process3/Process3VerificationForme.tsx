@@ -37,9 +37,9 @@ export default function Process3VerificationForme() {
 
   function onSubmit(values: FormeDecision) {
     if (values.formeValide === 'oui') {
-      navigate('/verification-fond')
+      navigate('/Processus3TypeChangement')
     } else {
-      navigate('/notification-refus-forme')
+      navigate('/Processus3Notification')
     }
   }
 

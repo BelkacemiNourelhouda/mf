@@ -35,7 +35,7 @@ export default function Process3TransmissionPR14() {
 
   function onSubmit(values: TransmissionValues) {
     console.log('📤 PR14 transmis :', values)
-    navigate('/publication-pr14')
+    navigate('/Processus3PublicationPR14')
   }
 
   return (

@@ -37,7 +37,7 @@ export default function Process3EtablissementPR14() {
 
   function onSubmit(values: PR14Values) {
     console.log('📌 PR14 généré :', values)
-    navigate('/transmission-pr14')
+    navigate('/Processus3TransmissionPR14')
   }
 
   return (

@@ -37,7 +37,7 @@ export default function Process3EmissionCC14() {
 
   function onSubmit(values: CC14Values) {
     console.log('📄 CC14 émis :', values)
-    navigate('/fin-processus')
+    navigate('/Processus3FinProcessus')
   }
 
   return (

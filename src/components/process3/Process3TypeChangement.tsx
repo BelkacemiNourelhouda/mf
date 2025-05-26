@@ -37,9 +37,9 @@ export default function Process3TypeChangement() {
 
   function onSubmit(values: ChangementType) {
     if (values.affecteNumerotation === 'oui') {
-      navigate('/etablissement-pr14')
+      navigate('/Processus3EtablissementPR14')
     } else {
-      navigate('/etablissement-cc20')
+      navigate('/Processus3EtablissementCC20')
     }
   }
 

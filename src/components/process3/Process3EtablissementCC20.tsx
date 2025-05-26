@@ -37,7 +37,7 @@ export default function Process3EtablissementCC20() {
 
   function onSubmit(values: CC20Values) {
     console.log('📐 CC20 établi :', values)
-    navigate('/fin-processus')
+    navigate('/Processus3FinProcessus')
   }
 
   return (
