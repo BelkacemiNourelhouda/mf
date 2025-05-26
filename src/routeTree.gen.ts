@@ -31,6 +31,17 @@ import { Route as Process2Process2PréparerImmatriculationImport } from './route
 import { Route as Process2Process2RejetProvisoireImport } from './routes/Process2/Process2RejetProvisoire'
 
 
+import { Route as Process3Process3EmissionCC14Import } from './routes/Process3/Process3EmissionCC14'
+import { Route as Process3Process3EnregistrementDemandeImport } from './routes/Process3/Process3EnregistrementDemande'
+import { Route as Process3Process3EtablissementCC20Import } from './routes/Process3/Process3EtablissementCC20'
+import { Route as Process3Process3EtablissementPR14Import } from './routes/Process3/Process3EtablissementPR14'
+import { Route as Process3Process3FinProcessusImport } from './routes/Process3/Process3FinProcessus'
+import { Route as Process3Process3PublicationPR14Import } from './routes/Process3/Process3PublicationPR14'
+import { Route as Process3Process3TransmissionPR14Import } from './routes/Process3/Process3TransmissionPR14'
+import { Route as Process3Process3TypeChangementImport } from './routes/Process3/Process3TypeChangement'
+import { Route as Process3Process3VerificationFormeImport } from './routes/Process3/Process3VerificationForme'
+
+
 // Create/Update Routes
 
 const IndexRoute = IndexImport.update({
@@ -131,6 +142,66 @@ const Process2Process2PréparerImmatriculationRoute =
 const Process2Process2RejetProvisoireRoute = Process2Process2RejetProvisoireImport.update({
   id: '/Process2/Process2RejetProvisoire',
   path: '/Process2/Process2RejetProvisoire',
+  getParentRoute: () => rootRoute,
+} as any)
+
+
+const Process3Process3EmissionCC14Route = Process3Process3EmissionCC14Import.update(
+  {
+    id: '/Process3/Process3EmissionCC14Route',
+    path: '/Process3/Process3EmissionCC14Route',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const Process3Process3EnregistrementDemandeRoute =
+  Process3Process3EnregistrementDemandeImport.update({
+    id: '/Process3/Process3EnregistrementDemande',
+    path: '/Process3/Process3EnregistrementDemande',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const Process3Process3EtablissementCC20Route =
+  Process3Process3EtablissementCC20Import.update({
+    id: '/Process3/Process3EtablissementCC20',
+    path: '/Process3/Process3EtablissementCC20',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const Process3Process3EtablissementPR14Route = Process3Process3EtablissementPR14Import.update({
+  id: '/Process3/Process3EtablissementPR14',
+  path: '/Process3/Process3EtablissementPR14',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Process3Process3FinProcessusRoute = Process3Process3FinProcessusImport.update({
+  id: '/Process3/Process3FinProcessus',
+  path: '/Process3/Process3FinProcessus',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Process3Process3PublicationPR14Route = Process3Process3PublicationPR14Import.update({
+  id: '/Process3/Process3PublicationPR14',
+  path: '/Process3/Process3PublicationPR14',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Process3Process3TransmissionPR14Route =
+  Process3Process3TransmissionPR14Import.update({
+    id: '/Process3/Process3TransmissionPR14',
+    path: '/Process3/Process3TransmissionPR14',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const Process3Process3TypeChangementRoute = Process3Process3TypeChangementImport.update({
+  id: '/Process3/Process3TypeChangement',
+  path: '/Process3/Process3TypeChangement',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Process3Process3VerificationFormeRoute = Process3Process3VerificationFormeImport.update({
+  id: '/Process3/Process3VerificationForme',
+  path: '/Process3/Process3VerificationForme',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -244,6 +315,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Process2Process2RejetProvisoireImport
       parentRoute: typeof rootRoute
     }
+    '/Process3/Process3EmissionCC14': {
+      id: '/Process3/Process3EmissionCC14'
+      path: '/Process3/Process3EmissionCC14'
+      fullPath: '/Process3/Process3EmissionCC14'
+      preLoaderRoute: typeof Process3Process3EmissionCC14Import
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3EnregistrementDemande': {
+      id: '/Process3/Process3EnregistrementDemande'
+      path: '/Process3/Process3EnregistrementDemande'
+      fullPath: '/Process3/Process3EnregistrementDemande'
+      preLoaderRoute: typeof Process3Process3EnregistrementDemandeImport
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3EtablissementCC20': {
+      id: '/Process3/Process3EtablissementCC20'
+      path: '/Process3/Process3EtablissementCC20'
+      fullPath: '/Process3/Process3EtablissementCC20'
+      preLoaderRoute: typeof Process3Process3EtablissementCC20Import
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3EtablissementPR14': {
+      id: '/Process3/Process3EtablissementPR14'
+      path: '/Process3/Process3EtablissementPR14'
+      fullPath: '/Process3/Process3EtablissementPR14'
+      preLoaderRoute: typeof Process3Process3EtablissementPR14Import
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3FinProcessus': {
+      id: '/Process3/Process3FinProcessus'
+      path: '/Process3/Process3FinProcessus'
+      fullPath: '/Process3/Process3FinProcessus'
+      preLoaderRoute: typeof Process3Process3FinProcessusImport
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3PublicationPR14': {
+      id: '/Process3/Process3PublicationPR14'
+      path: '/Process3/Process3PublicationPR14'
+      fullPath: '/Process3/Process3PublicationPR14'
+      preLoaderRoute: typeof Process3Process3PublicationPR14Import
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3TransmissionPR14': {
+      id: '/Process3/Process3TransmissionPR14'
+      path: '/Process3/Process3TransmissionPR14'
+      fullPath: '/Process3/Process3TransmissionPR14'
+      preLoaderRoute: typeof Process3Process3TransmissionPR14Import
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3TypeChangement': {
+      id: '/Process3/Process3TypeChangement'
+      path: '/Process3/Process3TypeChangement'
+      fullPath: '/Process3/Process3TypeChangement'
+      preLoaderRoute: typeof Process3Process3TypeChangementImport
+      parentRoute: typeof rootRoute
+    }
+    '/Process3/Process3VerificationForme': {
+      id: '/Process3/Process3VerificationForme'
+      path: '/Process3/Process3VerificationForme'
+      fullPath: '/Process3/Process3VerificationForme'
+      preLoaderRoute: typeof Process3Process3VerificationFormeImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -266,6 +400,17 @@ export interface FileRoutesByFullPath {
   '/Process2/Process2ImmatriculationProvisoire': typeof Process2Process2ImmatriculationProvisoireRoute
   '/Process2/Process2PréparerImmatriculation': typeof Process2Process2PréparerImmatriculationRoute
   '/Process2/Process2RejetProvisoire': typeof Process2Process2RejetProvisoireRoute
+
+  '/Process3/Process3EmissionCC14': typeof Process3Process3EmissionCC14Route
+  '/Process3/Process3EnregistrementDemande': typeof Process3Process3EnregistrementDemandeRoute
+  '/Process3/Process3EtablissementCC20': typeof Process3Process3EtablissementCC20Route
+  '/Process3/Process3EtablissementPR14': typeof Process3Process3EtablissementPR14Route
+  '/Process3/Process3FinProcessus': typeof Process3Process3FinProcessusRoute
+  '/Process3/Process3PublicationPR14': typeof Process3Process3PublicationPR14Route
+  '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
+  '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
+  '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
+
 }
 
 export interface FileRoutesByTo {
@@ -285,6 +430,17 @@ export interface FileRoutesByTo {
   '/Process2/Process2ImmatriculationProvisoire': typeof Process2Process2ImmatriculationProvisoireRoute
   '/Process2/Process2PréparerImmatriculation': typeof Process2Process2PréparerImmatriculationRoute
   '/Process2/Process2RejetProvisoire': typeof Process2Process2RejetProvisoireRoute
+
+  '/Process3/Process3EmissionCC14': typeof Process3Process3EmissionCC14Route
+  '/Process3/Process3EnregistrementDemande': typeof Process3Process3EnregistrementDemandeRoute
+  '/Process3/Process3EtablissementCC20': typeof Process3Process3EtablissementCC20Route
+  '/Process3/Process3EtablissementPR14': typeof Process3Process3EtablissementPR14Route
+  '/Process3/Process3FinProcessus': typeof Process3Process3FinProcessusRoute
+  '/Process3/Process3PublicationPR14': typeof Process3Process3PublicationPR14Route
+  '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
+  '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
+  '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
+
 }
 
 export interface FileRoutesById {
@@ -305,6 +461,17 @@ export interface FileRoutesById {
   '/Process2/Process2ImmatriculationProvisoire': typeof Process2Process2ImmatriculationProvisoireRoute
   '/Process2/Process2PréparerImmatriculation': typeof Process2Process2PréparerImmatriculationRoute
   '/Process2/Process2RejetProvisoire': typeof Process2Process2RejetProvisoireRoute
+
+  '/Process3/Process3EmissionCC14': typeof Process3Process3EmissionCC14Route
+  '/Process3/Process3EnregistrementDemande': typeof Process3Process3EnregistrementDemandeRoute
+  '/Process3/Process3EtablissementCC20': typeof Process3Process3EtablissementCC20Route
+  '/Process3/Process3EtablissementPR14': typeof Process3Process3EtablissementPR14Route
+  '/Process3/Process3FinProcessus': typeof Process3Process3FinProcessusRoute
+  '/Process3/Process3PublicationPR14': typeof Process3Process3PublicationPR14Route
+  '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
+  '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
+  '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
+
 }
 
 export interface FileRouteTypes {
@@ -327,6 +494,18 @@ export interface FileRouteTypes {
   | '/Process2/Process2PréparerImmatriculation'
   | '/Process2/Process2RejetProvisoire'
 
+  | '/Process3/Process3EmissionCC14'
+  | '/Process3/Process3EnregistrementDemande'
+  | '/Process3/Process3EtablissementCC20'
+  | '/Process3/Process3EtablissementPR14'
+  | '/Process3/Process3FinProcessus'
+  | '/Process3/Process3PublicationPR14'
+  | '/Process3/Process3TransmissionPR14'
+  | '/Process3/Process3TypeChangement'
+  | '/Process3/Process3VerificationForme'
+
+
+
   fileRoutesByTo: FileRoutesByTo
   to:
   | '/'
@@ -345,6 +524,16 @@ export interface FileRouteTypes {
   | '/Process2/Process2ImmatriculationProvisoire'
   | '/Process2/Process2PréparerImmatriculation'
   | '/Process2/Process2RejetProvisoire'
+
+  | '/Process3/Process3EmissionCC14'
+  | '/Process3/Process3EnregistrementDemande'
+  | '/Process3/Process3EtablissementCC20'
+  | '/Process3/Process3EtablissementPR14'
+  | '/Process3/Process3FinProcessus'
+  | '/Process3/Process3PublicationPR14'
+  | '/Process3/Process3TransmissionPR14'
+  | '/Process3/Process3TypeChangement'
+  | '/Process3/Process3VerificationForme'
   id:
   | '__root__'
   | '/'
@@ -363,6 +552,17 @@ export interface FileRouteTypes {
   | '/Process2/Process2ImmatriculationProvisoire'
   | '/Process2/Process2PréparerImmatriculation'
   | '/Process2/Process2RejetProvisoire'
+
+  | '/Process3/Process3EmissionCC14'
+  | '/Process3/Process3EnregistrementDemande'
+  | '/Process3/Process3EtablissementCC20'
+  | '/Process3/Process3EtablissementPR14'
+  | '/Process3/Process3FinProcessus'
+  | '/Process3/Process3PublicationPR14'
+  | '/Process3/Process3TransmissionPR14'
+  | '/Process3/Process3TypeChangement'
+  | '/Process3/Process3VerificationForme'
+
   fileRoutesById: FileRoutesById
 }
 
@@ -383,6 +583,19 @@ export interface RootRouteChildren {
   '/Process2/Process2ImmatriculationProvisoire': typeof Process2Process2ImmatriculationProvisoireRoute
   '/Process2/Process2PréparerImmatriculation': typeof Process2Process2PréparerImmatriculationRoute
   '/Process2/Process2RejetProvisoire': typeof Process2Process2RejetProvisoireRoute
+
+  '/Process3/Process3EmissionCC14': typeof Process3Process3EmissionCC14Route
+  '/Process3/Process3EnregistrementDemande': typeof Process3Process3EnregistrementDemandeRoute
+  '/Process3/Process3EtablissementCC20': typeof Process3Process3EtablissementCC20Route
+  '/Process3/Process3EtablissementPR14': typeof Process3Process3EtablissementPR14Route
+  '/Process3/Process3FinProcessus': typeof Process3Process3FinProcessusRoute
+  '/Process3/Process3PublicationPR14': typeof Process3Process3PublicationPR14Route
+  '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
+  '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
+  '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
+
+
+
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -403,6 +616,17 @@ const rootRouteChildren: RootRouteChildren = {
   Process2Process2ImmatriculationProvisoireRoute: Process2Process2ImmatriculationProvisoireRoute,
   Process2Process2PréparerImmatriculationRoute: Process2Process2PréparerImmatriculationRoute,
   Process2Process2RejetProvisoireRoute: Process2Process2RejetProvisoireRoute,
+
+  Process3Process3EmissionCC14Route: Process3Process3EmissionCC14Route,
+  Process3Process3EnregistrementDemandeRoute: Process3Process3EnregistrementDemandeRoute,
+  Process3Process3EtablissementCC20Route: Process3Process3EtablissementCC20Route,
+  Process3Process3EtablissementPR14Route: Process3Process3EtablissementPR14Route,
+  Process3Process3FinProcessusRoute: Process3Process3FinProcessusRoute,
+  Process3Process3PublicationPR14Route: Process3Process3PublicationPR14Route,
+  Process3Process3TransmissionPR14Route: Process3Process3TransmissionPR14Route,
+  Process3Process3TypeChangementRoute: Process3Process3TypeChangementRoute,
+  Process3Process3VerificationFormeRoute: Process3Process3VerificationFormeRoute,
+
 
 }
 
