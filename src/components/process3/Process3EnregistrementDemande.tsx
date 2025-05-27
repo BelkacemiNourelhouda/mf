@@ -5,6 +5,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useNavigate } from 'react-router-dom'
 import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select'
+import {
   Form,
   FormControl,
   FormDescription,
@@ -20,9 +27,14 @@ const enregistrementSchema = z.object({
   nomDemandeur: z.string().min(1, 'Le nom du demandeur est requis'),
   prenomDemandeur: z.string().min(1, 'Le prénom du demandeur est requis'),
   referenceCadastrale: z.string().min(1, 'La référence cadastrale est requise'),
+  conformitéType: z.string().min(1, 'Le type d’acte est requis'),
 })
 
 type EnregistrementValues = z.infer<typeof enregistrementSchema>
+const conformitéTypes = [
+  { label: 'Conforme', value: 'Conforme' },
+  { label: 'Non Conforme', value: 'Non Conforme' },
+]
 
 export default function Process3EnregistrementDemande() {
   const navigate = useNavigate()
@@ -41,7 +53,11 @@ export default function Process3EnregistrementDemande() {
 
   function onSubmit(values: EnregistrementValues) {
     console.log('📩 Enregistrement soumis :', values)
-    navigate('/Processus3VerificationForme') // étape suivante
+    if (values.conformitéType === "Conforme") {
+      navigate("/Processus3VerificationForme")
+    } else {
+      navigate("/Process3Notifier")
+    } 
   }
 
   return (
@@ -117,6 +133,36 @@ export default function Process3EnregistrementDemande() {
               <FormControl>
                 <Input placeholder="ex : 25/125/2025" {...field} />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        
+ {/* conformité */}
+ <FormField
+          control={form.control}
+          name="conformitéType"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Type de conformité</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger className="h-12 text-base w-full">
+                    <SelectValue placeholder="Sélectionnez un type de conformité" />
+                  </SelectTrigger>
+                </FormControl>
+                <FormDescription>
+              
+              </FormDescription>
+                <SelectContent>
+                  {conformitéTypes.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}

@@ -35,7 +35,7 @@ export default function Process1RefusDepot() {
 
   const onSubmit = (values: RefusDepotValues) => {
     console.log("❌ Refus enregistré :", values)
-    navigate("/levementReservation")
+    navigate("/Process1LeverReserveForme")
   }
 
   return (

@@ -53,9 +53,9 @@ export default function Process2EnregistrementDemande() {
   const onSubmit = (values: DemandeValues) => {
     console.log("📩 Données enregistrées :", values)
     if (values.conformitéType === "Conforme") {
-        navigate("/examinationFond")
+        navigate("/Process2ExaminerFond")
       } else {
-        navigate("/finNegative")
+        navigate("/Process2RejetProvisoire")
       }  }
 
   return (

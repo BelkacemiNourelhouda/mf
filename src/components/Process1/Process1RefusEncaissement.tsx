@@ -52,9 +52,9 @@ const navigate = useNavigate()
   const onSubmit = (values: RefusEncaissementValues) => {
     console.log("❌ Refus enregistré :", values)
     if (values.conformitéType === "Conforme") {
-        navigate("/levementReservation2")
+        navigate("/Process1LeverReserve2")
       } else {
-        navigate("/fin")
+        navigate("/Process1Fin")
       }
   }
 

@@ -72,9 +72,9 @@ export default function Process1DepotDemand() {
   function onSubmit(values: depotValues) {
     console.log('🔄 Données soumises :', values)
     if (values.conformitéType === "Conforme") {
-      navigate("/encaissement")
+      navigate("/Process1EncaissementTaxe")
     } else {
-      navigate("/refusDepot")
+      navigate("/Process1RefusDepot")
     }
   }
 

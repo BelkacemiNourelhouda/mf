@@ -40,6 +40,7 @@ import { Route as Process3Process3PublicationPR14Import } from './routes/Process
 import { Route as Process3Process3TransmissionPR14Import } from './routes/Process3/Process3TransmissionPR14'
 import { Route as Process3Process3TypeChangementImport } from './routes/Process3/Process3TypeChangement'
 import { Route as Process3Process3VerificationFormeImport } from './routes/Process3/Process3VerificationForme'
+import { Route as Process3Process3NotifierImport } from './routes/Process3/Process3Notifier'
 
 
 // Create/Update Routes
@@ -205,6 +206,11 @@ const Process3Process3VerificationFormeRoute = Process3Process3VerificationForme
   getParentRoute: () => rootRoute,
 } as any)
 
+const Process3Process3NotifierRoute = Process3Process3NotifierImport.update({
+  id: '/Process3/Process3Notifier',
+  path: '/Process3/Process3Notifier',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -378,6 +384,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Process3Process3VerificationFormeImport
       parentRoute: typeof rootRoute
     }
+    '/Process3/Process3Notifier': {
+      id: '/Process3/Process3Notifier'
+      path: '/Process3/Process3Notifier'
+      fullPath: '/Process3/Process3Notifier'
+      preLoaderRoute: typeof Process3Process3NotifierImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -410,7 +423,7 @@ export interface FileRoutesByFullPath {
   '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
   '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
   '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
-
+  '/Process3/Process3Notifier': typeof Process3Process3NotifierRoute
 }
 
 export interface FileRoutesByTo {
@@ -440,7 +453,7 @@ export interface FileRoutesByTo {
   '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
   '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
   '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
-
+  '/Process3/Process3Notifier': typeof Process3Process3NotifierRoute
 }
 
 export interface FileRoutesById {
@@ -471,7 +484,7 @@ export interface FileRoutesById {
   '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
   '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
   '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
-
+  '/Process3/Process3Notifier': typeof Process3Process3NotifierRoute
 }
 
 export interface FileRouteTypes {
@@ -503,6 +516,7 @@ export interface FileRouteTypes {
   | '/Process3/Process3TransmissionPR14'
   | '/Process3/Process3TypeChangement'
   | '/Process3/Process3VerificationForme'
+  | '/Process3/Process3Notifier'
 
 
 
@@ -534,6 +548,7 @@ export interface FileRouteTypes {
   | '/Process3/Process3TransmissionPR14'
   | '/Process3/Process3TypeChangement'
   | '/Process3/Process3VerificationForme'
+  | '/Process3/Process3Notifier'
   id:
   | '__root__'
   | '/'
@@ -562,6 +577,7 @@ export interface FileRouteTypes {
   | '/Process3/Process3TransmissionPR14'
   | '/Process3/Process3TypeChangement'
   | '/Process3/Process3VerificationForme'
+  | '/Process3/Process3Notifier'
 
   fileRoutesById: FileRoutesById
 }
@@ -593,7 +609,7 @@ export interface RootRouteChildren {
   '/Process3/Process3TransmissionPR14': typeof Process3Process3TransmissionPR14Route
   '/Process3/Process3TypeChangement': typeof Process3Process3TypeChangementRoute
   '/Process3/Process3VerificationForme': typeof Process3Process3VerificationFormeRoute
-
+  '/Process3/Process3Notifier': typeof Process3Process3NotifierRoute
 
 
 }
@@ -626,7 +642,7 @@ const rootRouteChildren: RootRouteChildren = {
   Process3Process3TransmissionPR14Route: Process3Process3TransmissionPR14Route,
   Process3Process3TypeChangementRoute: Process3Process3TypeChangementRoute,
   Process3Process3VerificationFormeRoute: Process3Process3VerificationFormeRoute,
-
+  Process3Process3NotifierRoute: Process3Process3NotifierRoute,
 
 }
 

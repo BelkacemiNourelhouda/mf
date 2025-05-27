@@ -34,7 +34,7 @@ export default function Process2ImmatriculationProvisoire() {
   const onSubmit = (data: ImmatriculationData) => {
     const file = data.document[0]
     console.log("📎 Fichier sélectionné :", file)
-    navigate("/preparationImmat")
+    navigate("/Process2PreparationImmatriculation")
   }
 
   return (

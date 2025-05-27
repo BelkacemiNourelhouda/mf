@@ -48,7 +48,7 @@ const navigate = useNavigate()
 
   const onSubmit = (values: ExecutionValues) => {
     console.log('✅ execution soumise :', values)
-    navigate("/fin")
+    navigate("/Process1Fin")
     
     }
 

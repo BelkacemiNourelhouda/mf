@@ -37,7 +37,7 @@ export default function Process1LeverReserveForme2() {
 
   const onSubmit = (values: ReserveFormeValues) => {
     console.log("✅ Réserve levée :", values)
-    navigate("/encaissement")
+    navigate("/Process1EncaissementTaxe")
   }
 
   return (

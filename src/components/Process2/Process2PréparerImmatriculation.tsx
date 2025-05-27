@@ -53,7 +53,7 @@ export default function Process2PreparerImmatriculation() {
     const file = data.acteDefinitif[0]
     console.log("📎 Acte définitif :", file)
     console.log("📝 Commentaire :", data.commentaire)
-    navigate("/fin2")
+    navigate("/Processs2EmailEnvoye")
   }
 
   return (

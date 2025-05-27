@@ -55,9 +55,9 @@ const navigate = useNavigate()
   const onSubmit = (values: EncaissementValues) => {
     console.log('✅ Encaissement soumis :', values)
     if (values.conformitéType === "Conforme") {
-      navigate("/execution")
+      navigate("/Process1Execution")
     } else {
-      navigate("/refusEncaissement")
+      navigate("/Process1RefusEncaissement")
     }
  }
 

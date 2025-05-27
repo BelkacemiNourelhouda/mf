@@ -48,9 +48,9 @@ export default function Process2ExaminerFond() {
   const onSubmit = (data: FondValues) => {
     console.log("✅ Données : ", data)
     if (data.decisionFond === "conforme") {
-      navigate("/immatriculationProv")
+      navigate("/Process2ImmatriculationProvisoire")
     } else {
-      navigate("/finNegative")
+      navigate("/Process2RejetProvisoire")
     }
   }
 

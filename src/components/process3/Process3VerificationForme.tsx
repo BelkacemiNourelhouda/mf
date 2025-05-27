@@ -39,7 +39,7 @@ export default function Process3VerificationForme() {
     if (values.formeValide === 'oui') {
       navigate('/Processus3TypeChangement')
     } else {
-      navigate('/Processus3Notification')
+      navigate('/Processus3Notifier')
     }
   }
 

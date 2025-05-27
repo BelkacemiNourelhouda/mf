@@ -35,7 +35,7 @@ export default function Process1LeverReserveForme() {
 
   const onSubmit = (values: ReserveFormeValues) => {
     console.log("✅ Réserve levée :", values)
-    navigate("/")
+    navigate("/Process1DepotDemand")
   }
 
   return (
